@@ -1,5 +1,6 @@
 import PageTitle from "../components/Headline/Headline";
 import ProductCard from "../components/ProductCard/ProductCard";
+import Shelf from "../components/Shelf/Shelf";
 import Head from "next/head";
 
 export default function Home(props) {
@@ -13,10 +14,14 @@ export default function Home(props) {
         <title>Assessment 5</title>
       </Head>
       <PageTitle title="Coffee Break Cafe" tagline="Featured Beans on Sale"/> 
+      <hr />
       <main>
-        {
-          products.map(product => <ProductCard key={product.uid} product={product} />)
-        }
+        <Shelf>
+          {
+            products.map(product => <ProductCard key={product.uid} product={product} />)
+          }
+        </Shelf>
+        
       </main>
     </>
   )
